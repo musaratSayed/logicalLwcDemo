@@ -1,0 +1,41 @@
+<template>
+   <lightning-card title=" Logic Demo " icon-name="custom:custom9">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                    {greeting}
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <template if:true={message}>
+                    {message}
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <template for:each={contacts} for:item='contact'  for:index='index'>
+                    <p key={contact.Id}> {index}</p>
+                    {contact.Name}
+                    {contact.Id}
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                    
+                        <template for:each={records} for:item='rec' for:index='ind'>
+                            <p key={rec.Id}>{ind} </p>
+                            {rec}
+                            {rec}
+                        </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="Call Apex" title = "ApexCall" onclick={handleClick} variant="brand">
+                </lightning-button>
+            </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <template for:each={maps} for:item="item">
+                {item.key} => {item.value}
+            </template>
+
+        </lightning-layout-item>
+        </lightning-layout>
+   </lightning-card>  
+</template>
